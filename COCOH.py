@@ -249,20 +249,20 @@ def main():
     
 #MIL DATASET PATHS
     feats_dirpaths = {
-        'he_5x': r'F:\Cochi_Master\bags\he\5x\Hibou',
-        'he_10x': r'F:\Cochi_Master\bags\he\10x\Hibou',
-        'he_20x': r'F:\Cochi_Master\bags\he\20x\Hibou',
-        'krt13': r'F:\Cochi_Master\bags\krt13\5x\Hibou'
+        'he_5x': [PATH],
+        'he_10x': [PATH],
+        'he_20x': [PATH],
+        'krt13': [PATH]'
     }
-    csv_fpath = r'F:\cochi_data\annotations_cochi.csv'
+    csv_fpath = [PATH]'
     
     external_feats_dirpaths = {
-        'he_5x': r'F:\Cochi_Master\bags\he\ext\5X',
-        'he_10x': r'F:\Cochi_Master\bags\he\ext\10X',
-        'he_20x': r'F:\Cochi_Master\bags\he\ext\20X',
-        'krt13': r'F:\Cochi_Master\bags\krt13\EXT'
+        'he_5x': [PATH],
+        'he_10x': [PATH],
+        'he_20x': [PATH],
+        'krt13': [PATH]'
     }
-    external_csv_fpath = r'F:\cochi_data\EXT.csv'
+    external_csv_fpath = [PATH].csv'
     
 #LOADER
     loader_kwargs = {'batch_size': 1, 'num_workers': 0, 'pin_memory': False}
@@ -323,7 +323,7 @@ def main():
     print(f"Best Val AUPRC: {highest_auprc:.4f} (epoch {best_epoch})")
     
 #SAVE RESULTS AS CSV
-    with pd.ExcelWriter(r'F:\Cochi_Master\model\try.xlsx') as writer:
+    with pd.ExcelWriter(r'[PATH].xlsx') as writer:
         val_pred_df.to_excel(writer, sheet_name='Validation', index=False)
         test_pred_df.to_excel(writer, sheet_name='Test', index=False)
         external_pred_df.to_excel(writer, sheet_name='External', index=False)
@@ -335,7 +335,8 @@ def main():
             'test': test_log,
             'external': external_log
         }
-    }, r'F:\Cochi_Master\model\try.ckpt')
+    }, [PATH].ckpt')
 
 if __name__ == '__main__':
     main()
+
