@@ -288,7 +288,7 @@ def main():
     loss_fn = FocalCE(alpha=0.75, gamma=2.0)
     
 #TRAINING LOOP
-    num_epochs, min_early_stopping, patience, counter = 100, 5, 5, 0
+    num_epochs, min_early_stopping, patience, counter = 100, 5, 10, 0
     highest_auprc, best_model = 0.0, None
     best_epoch = 0
     
@@ -339,4 +339,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
